@@ -51,3 +51,37 @@
 - Teste de API com o 'Thunder Client' e 'Postman'
 
 ---
+
+## Aula 5
+
+- Lógica de armazenamento de imagens no servidor;
+- Criação de rota PUT para atualização de post;
+- Integração com a API do Gemini;
+- Integração do back-end com o front-end;
+- Deploy do back-end na Google Cloud
+
+---
+
+### Imagens
+
+- MongoDB Cluster0
+
+![MongoDB Cluster0](./prints/cluster0.png)
+
+- Front-end
+
+![Front-end](./prints/frontend.png)
+
+- Postman (GET, POST, PUT)
+
+![Postman GET](./prints/postmanGet.png)
+![Postman POST](./prints/postmanPost.png)
+![Postman PUT](./prints/postmanPut.png)
+
+- API Instabyte
+
+![API Instabyte](./prints/urlAPI.png)
+
+- API Google Cloud
+
+![Google Cloud](./prints/API_gCloud.png)
