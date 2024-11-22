@@ -1,11 +1,18 @@
 // Importa as dependências necessárias para a aplicação
 import express from "express";
 import multer from "multer";
+import cors from "cors";
 import {
   listarPosts,
   postarNovoPost,
   uploadImagem,
+  atualizarNovoPost,
 } from "../controllers/postsController.js";
+
+const corsOptions = {
+  origin: "http://localhost:8000",
+  optionsSuccessStatus: 200,
+};
 
 // Configura o armazenamento em disco para o Multer
 const storage = multer.diskStorage({
@@ -27,6 +34,8 @@ const routes = (app) => {
   // Permite que a aplicação entenda dados JSON no corpo das requisições
   app.use(express.json());
 
+  app.use(cors(corsOptions));
+
   // Rota para listar todos os posts (implementada em listarPosts)
   app.get("/posts", listarPosts);
 
@@ -35,6 +44,8 @@ const routes = (app) => {
 
   // Rota para fazer upload de imagens (implementada em uploadImagem)
   app.post("/upload", upload.single("imagem"), uploadImagem); // Valide e sanitize a imagem antes de salvar
+  // Rota para atualizar um registro existente no BD
+  app.put("/upload/:id", atualizarNovoPost);
 };
 
 // Exporta a função de rotas para ser usada em outros módulos
